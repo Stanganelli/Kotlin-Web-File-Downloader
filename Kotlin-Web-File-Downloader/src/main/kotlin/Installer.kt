@@ -10,8 +10,7 @@ import javax.swing.JOptionPane
  * uma url e nome do arquivo de destino.
  * a função utiliza entrada e saída de streams para efetuar o download do arquivo e criar o arquivo local.
  * parametro  url a url do arquivo a ser baixado.
- * parametro nomeArquivo o nome do arquivo de destino onde o conteúdo será salvo.
- * além d utilização da criação de arquivos também fácil para a copia
+ * parametro nomeArquivo o nome do arquivo de destino onde o conteúdo será salvo com a extensão correto
  **/
 
 fun main() {
@@ -30,8 +29,8 @@ fun downloadArq(url: URL, nomeArquivo: String) {
 }
 
 fun installFromUrl() {
-    val url = URL(JOptionPane.showInputDialog("Insira a url do que quer baixar")) // link de onde baixa o pip
-    val nomeArquivo = JOptionPane.showInputDialog(null,"insira o nome do arquivo contando com sua extensão") // nome do arquivo localmente
+    val url = URL(JOptionPane.showInputDialog("Insira a url do que quer baixar")) // usuario insere o link
+    val nomeArquivo = JOptionPane.showInputDialog(null,"insira o nome do arquivo contando com sua extensão") // nome do arquivo localmente com sua devida extensão
     downloadArq(url, nomeArquivo)
     println("Arquivo baixado com sucesso: $nomeArquivo")
 }
