@@ -15,7 +15,18 @@ import javax.swing.JOptionPane
  **/
 
 fun main() {
-    installFromUrl()
+
+    // url de exemplo http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4
+
+    val url = URL(JOptionPane.showInputDialog("Insira a url do que quer baixar"))
+    val nomeArquivo = JOptionPane.showInputDialog(
+        null,
+        "insira o nome do arquivo contando com sua extensão"
+    ) // nome do arquivo localmente 
+
+
+
+    installFromUrl(url, nomeArquivo)
 }
 
 // função para baixar um arquivo da URL e salvar no disco com o nome especificado
@@ -29,9 +40,17 @@ fun downloadArq(url: URL, nomeArquivo: String) {
     }
 }
 
-fun installFromUrl() {
-    val url = URL(JOptionPane.showInputDialog("Insira a url do que quer baixar")) // link de onde baixa o pip
-    val nomeArquivo = JOptionPane.showInputDialog(null,"insira o nome do arquivo contando com sua extensão") // nome do arquivo localmente
+fun installFromUrl(url: URL, nomeArquivo: String) {
+    downloadArq(url, nomeArquivo)
+    println("Arquivo baixado com sucesso: $nomeArquivo")
+}
+
+fun installFromUrlYoutube(url: URL, nomeArquivo: String: String) {
+    val url = URL(JOptionPane.showInputDialog("Insira a url do que quer baixar"))
+    val nomeArquivo = JOptionPane.showInputDialog(
+        null,
+        "insira o nome do arquivo contando com sua extensão"
+    ) // nome do arquivo localmente
     downloadArq(url, nomeArquivo)
     println("Arquivo baixado com sucesso: $nomeArquivo")
 }
