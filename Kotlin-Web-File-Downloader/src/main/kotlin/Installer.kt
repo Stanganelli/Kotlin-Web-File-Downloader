@@ -23,10 +23,20 @@ fun main() {
         null,
         "insira o nome do arquivo contando com sua extensão"
     ) // nome do arquivo localmente
+    var yotubeUrl = "https://www.youtube.com"
+
+    if (url.toString().startsWith(yotubeUrl)) {
+        JOptionPane.showMessageDialog(null, "baixando do youtube")
+        installFromUrlYoutube(url, nomeArquivo)
+    } else {
+        JOptionPane.showMessageDialog(null, "baixando")
+        installFromUrl(url, nomeArquivo)
+    }
 
 
 
-    installFromUrl(url, nomeArquivo)
+
+
 }
 
 // função para baixar um arquivo da URL e salvar no disco com o nome especificado
@@ -45,12 +55,8 @@ fun installFromUrl(url: URL, nomeArquivo: String) {
     println("Arquivo baixado com sucesso: $nomeArquivo")
 }
 
-fun installFromUrlYoutube(url: URL, nomeArquivo: String: String) {
-    val url = URL(JOptionPane.showInputDialog("Insira a url do que quer baixar"))
-    val nomeArquivo = JOptionPane.showInputDialog(
-        null,
-        "insira o nome do arquivo contando com sua extensão"
-    ) // nome do arquivo localmente
-    downloadArq(url, nomeArquivo)
+fun installFromUrlYoutube(url: URL, nomeArquivo:String) {
+
+
     println("Arquivo baixado com sucesso: $nomeArquivo")
 }
