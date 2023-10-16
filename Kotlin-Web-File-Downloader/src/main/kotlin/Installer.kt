@@ -22,7 +22,7 @@ fun main() {
     val nomeArquivo = JOptionPane.showInputDialog(
         null,
         "insira o nome do arquivo contando com sua extensão"
-    ) // nome do arquivo localmente 
+    ) // nome do arquivo localmente
 
 
 
